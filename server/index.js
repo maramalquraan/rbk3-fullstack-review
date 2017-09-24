@@ -24,22 +24,24 @@ app.post('/repos/import', function(req, res) {
 // });
 
 
-// var options = {
-//   url: 'https://api.github.com/repos/request/request',
-//   headers: {
-//     'User-Agent': 'request'
-//   }
-// };
+var options = {
+  url: 'https://api.github.com/repos/request/request',
+  headers: {
+    'User-Agent': 'request'
+  }
+};
  
-// function callback(error, response, body) {
-//   if (!error && response.statusCode == 200) {
-//     var info = JSON.parse(body);
-//     console.log(info.stargazers_count + " Stars");
-//     console.log(info.forks_count + " Forks");
-//   }
-// }
+function callback(error, response, body) {
+  if (!error && response.statusCode == 200) {
+    var info = JSON.parse(body);
+    console.log(info.stargazers_count + " Stars");
+    console.log(info.forks_count + " Forks");
+  }
+}
  
-// request(options, callback);
+request(options, callback);
+
+
 
 
 var port = 1128;
